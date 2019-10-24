@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1374601618 source:c:\users\kamil\desktop\paper stone scrissors game\paper stone scrissors game\main.cpp
+	<iostream>
+	<conio.h>
+	<cstdlib>
+	<ctime>
+	<string>
+	<Windows.h>
+	"functions.h"
+
+1374601618 c:\users\kamil\desktop\paper stone scrissors game\paper stone scrissors game\functions.h
+	<iostream>
+	<conio.h>
+	<cstdlib>
+	<ctime>
+	<string>
+	<fstream>
+	<Windows.h>
+
+1374601618 source:c:\users\kamil\desktop\paper stone scrissors game\paper stone scrissors game\game.cpp
+	<iostream>
+	<conio.h>
+	<cstdlib>
+	<ctime>
+	<string>
+	<Windows.h>
+	<vector>
+	"functions.h"
+
+1374606521 source:c:\users\kamil\desktop\paper stone scrissors game\paper stone scrissors game\menu.cpp
+	<iostream>
+	<Windows.h>
+	<conio.h>
+	"functions.h"
+	<fstream>
+
+1374606932 source:c:\users\user\documents\programs c++\paper stone scrissors game\paper stone scrissors game\game.cpp
+	<iostream>
+	<conio.h>
+	<cstdlib>
+	<ctime>
+	<string>
+	<Windows.h>
+	<vector>
+	"functions.h"
+
+1374601620 c:\users\user\documents\programs c++\paper stone scrissors game\paper stone scrissors game\functions.h
+	<iostream>
+	<conio.h>
+	<cstdlib>
+	<ctime>
+	<string>
+	<fstream>
+	<Windows.h>
+
+1374601620 source:c:\users\user\documents\programs c++\paper stone scrissors game\paper stone scrissors game\main.cpp
+	<iostream>
+	<conio.h>
+	<cstdlib>
+	<ctime>
+	<string>
+	<Windows.h>
+	"functions.h"
+
+1374606522 source:c:\users\user\documents\programs c++\paper stone scrissors game\paper stone scrissors game\menu.cpp
+	<iostream>
+	<Windows.h>
+	<conio.h>
+	"functions.h"
+	<fstream>
+
