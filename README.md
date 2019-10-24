@@ -11,6 +11,8 @@ vertical, or diagonal row is the winner.
 
 GameJolt: https://gamejolt.com/games/paper-stone-scrissors-game/89202
 
+Trailer: https://www.youtube.com/watch?v=brF3Rv4bDqo
+
 ## Requirements
 * Windows XP or newer.
 * C++98 compiler
