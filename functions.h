@@ -67,12 +67,4 @@ int SetColorsP1();
 //end declaration functions in game.cpp file
 
 
-//start declaration functions for computer AI
-
-
-
-
-//end declaration functions for computer AI
-
-
 #endif

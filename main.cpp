@@ -49,15 +49,15 @@ int type_game;
 int main()
 {
 	srand((unsigned int) time( NULL ) );
-while(1)
-{
-	int draw_computer =( rand() % 3 ) + 1;
-	system ("TITLE Paper Stone Scrissors Game - Kamil Piechura");
-	DrawStartScreen (key);
-		DrawBoard();
-			DrawString();
-				GetTypeGame(type_game);
-	_getch();
-}
-return EXIT_SUCCESS;
+  while(1)
+  {
+    int draw_computer =( rand() % 3 ) + 1;
+    system ("TITLE Paper Stone Scrissors Game - Kamil Piechura");
+    DrawStartScreen(key);
+    DrawBoard();
+    DrawString();
+    GetTypeGame(type_game);
+    _getch();
+  }
+  return EXIT_SUCCESS;
 }

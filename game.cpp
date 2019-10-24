@@ -42,25 +42,25 @@ THE SOFTWARE.*/
 #include "functions.h"
 
 struct INFO
-	  {
-		  int _rounds;
-		  std::string names[2];
-		  unsigned int score_player[2];
-	  };
+{
+  int _rounds;
+  std::string names[2];
+  unsigned int score_player[2];
+};
 struct SCORE_PLAYER
-	  {
-		  std::string name;
-		  int number_rounds;
-		  int score_player1;
-		  int score_computer;
-      };
+{
+  std::string name;
+  int number_rounds;
+  int score_player1;
+  int score_computer;
+};
 
 int key1 = 0, key2 = 0;
 int counter_rounds = 1;
 int counter_rounds_for_computer = 1;
 int number_players = 0;
 int color123 = 0;
-int cnt=0;
+int cnt = 0;
 
 
 
@@ -92,47 +92,47 @@ void DrawString(void)
 	game_options.score_player[1] = 0;
 	system("COLOR 07");
 	std::cout << "\t\t\t";
-		for (int i = 0; i < TAB; ++i)
-			{
-			std::cout << "=";
-			}
-		std::cout << "\n\t\t\t";
+  for (int i = 0; i < TAB; ++i)
+  {
+    std::cout << "=";
+  }
+  std::cout << "\n\t\t\t";
 	HANDLE handle;
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
-		SetConsoleTextAttribute( handle , 4 );
-		std::cout << "=  Paper Stone Scrissors Game =" << std::endl;
-		SetConsoleTextAttribute( handle , 7 );
-		std::cout << "\t\t\t";
-			for (int i = 0; i < TAB; ++i)
-				{
-					std::cout << "=";
-				}
+  SetConsoleTextAttribute( handle , 4 );
+  std::cout << "=  Paper Stone Scrissors Game =" << std::endl;
+  SetConsoleTextAttribute( handle , 7 );
+  std::cout << "\t\t\t";
+  for (int i = 0; i < TAB; ++i)
+  {
+    std::cout << "=";
+  }
 	std::cout << "\n\n" << std::endl;
 }
 
 void DrawMenuPlayerVsPlayer();
-	void DrawMenuPlayerVsComputer();
-			void DrawCountdown();
-				void DrawTypesWeaponsPlayer1();
-					void DrawTypesWeaponsPlayer2();
-						void GameForPlayers();
-							void DrawScreenForChangePlayer();
-								void DrawStringForBattle();
-									int CheckGame();
-										void DrawStatistics();
-											void GetNumberRoundsForComputer();
-												void GameForComputer();
-													void GetTypeWeaponPlayer();
-														void DrawScreenForComputerMove();
-															char GetComputerDifficultLevel();
-																char AI();
-																	void CheckGameForComputer();
-																		void StatisticsForComputer();
-																			int ReturnNumberPlayers();
-																				void GetNamesPlayers(const int number_players);
-																					void DrawStringEliminations();
-																						void GetTypeWeaponsPlayers();
-																							void DrawCountdownForComputer();
+void DrawMenuPlayerVsComputer();
+void DrawCountdown();
+void DrawTypesWeaponsPlayer1();
+void DrawTypesWeaponsPlayer2();
+void GameForPlayers();
+void DrawScreenForChangePlayer();
+void DrawStringForBattle();
+int CheckGame();
+void DrawStatistics();
+void GetNumberRoundsForComputer();
+void GameForComputer();
+void GetTypeWeaponPlayer();
+void DrawScreenForComputerMove();
+char GetComputerDifficultLevel();
+char AI();
+void CheckGameForComputer();
+void StatisticsForComputer();
+int ReturnNumberPlayers();
+void GetNamesPlayers(const int number_players);
+void DrawStringEliminations();
+void GetTypeWeaponsPlayers();
+void DrawCountdownForComputer();
 
 
 void GetTypeGame(int __type)
@@ -142,11 +142,11 @@ void GetTypeGame(int __type)
 
 	HANDLE handle;
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
-		SetConsoleTextAttribute (handle, 2);
-		std::cout << "\t\t\t     Enter type your game: " << std:: endl << std:: endl << std::endl;
+  SetConsoleTextAttribute (handle, 2);
+  std::cout << "\t\t\t     Enter type your game: " << std:: endl << std:: endl << std::endl;
 	Sleep (SLEEP_TIME);
 	DrawMenuPlayerVsPlayer();
-		DrawMenuPlayerVsComputer();
+  DrawMenuPlayerVsComputer();
 	std::cout << std::endl << std::endl;
 }
 
@@ -156,23 +156,23 @@ void DrawMenuPlayerVsPlayer (void)
 	Sleep (SLEEP_TIME + 1000);
 	HANDLE handle;
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
-		SetConsoleTextAttribute (handle, 4);
-			for (int i = 0; i < 21; ++i)
-				{
-					std::cout << "-";
-				}
-			SetConsoleTextAttribute (handle, 7);
-				  std::cout << std::endl;
-				  std::cout	<< "\a  |   0           0   |" << std::endl;
-				  std::cout << "  |  - -    Vs   - -  |     [1] Player Vs Player" << std::endl;
-				  std::cout << "  |   ||          ||  |"  << std::endl;
-				  SetConsoleTextAttribute (handle, 4);
-				  std::cout << "  ";
-						for (int i = 0; i < 21; ++i)
-							{
-								std::cout << "-";
-							}
-						std::cout << std::endl;
+  SetConsoleTextAttribute (handle, 4);
+  for (int i = 0; i < 21; ++i)
+  {
+    std::cout << "-";
+  }
+  SetConsoleTextAttribute (handle, 7);
+  std::cout << std::endl;
+  std::cout	<< "\a  |   0           0   |" << std::endl;
+  std::cout << "  |  - -    Vs   - -  |     [1] Player Vs Player" << std::endl;
+  std::cout << "  |   ||          ||  |"  << std::endl;
+  SetConsoleTextAttribute (handle, 4);
+  std::cout << "  ";
+  for (int i = 0; i < 21; ++i)
+  {
+    std::cout << "-";
+  }
+  std::cout << std::endl;
 }
 
 void DrawMenuPlayerVsComputer (void)
@@ -180,36 +180,35 @@ void DrawMenuPlayerVsComputer (void)
 	std::cout << std::endl << std::endl;
 	std::cout << "  ";
 	Sleep (SLEEP_TIME + 1000);
-				for (int i = 0; i < 21; ++i)
-					{
-						std::cout << "-";
-					}
-		HANDLE handle;
-		handle = GetStdHandle(STD_OUTPUT_HANDLE);
-					SetConsoleTextAttribute (handle, 7);
-				  std::cout << std::endl;
-				  std::cout	<< "\a  |   0          ---  |" << std::endl;
-				  std::cout << "  |  - -    Vs  |CPU| |     [2] Player Vs Computer" << std::endl;
-				  std::cout << "  |   ||         ---  |" << std::endl;
-				  SetConsoleTextAttribute (handle, 4);
-				  std::cout << "  ";
-						for (int i = 0; i < 21; ++i)
-							{
-								std::cout << "-";
-							}
-		Sleep (SLEEP_TIME);
-		std::cout << std::endl;
+  for (int i = 0; i < 21; ++i)
+  {
+    std::cout << "-";
+  }
+  HANDLE handle;
+  handle = GetStdHandle(STD_OUTPUT_HANDLE);
+  SetConsoleTextAttribute (handle, 7);
+  std::cout << std::endl;
+  std::cout	<< "\a  |   0          ---  |" << std::endl;
+  std::cout << "  |  - -    Vs  |CPU| |     [2] Player Vs Computer" << std::endl;
+  std::cout << "  |   ||         ---  |" << std::endl;
+  SetConsoleTextAttribute (handle, 4);
+  std::cout << "  ";
+  for (int i = 0; i < 21; ++i)
+  {
+    std::cout << "-";
+  }
+  Sleep (SLEEP_TIME);
+  std::cout << std::endl;
 
-		key_keyboard = _getch();
-		if (key_keyboard == '1')  {GetNumberRounds();}
-			if (key_keyboard == '2')  {GetNumberRoundsForComputer();}
-				else
-				{
-					std::cout << "\n\n\n  Wrong option!";
-					Sleep(700);
-					DrawBoard();
-				}
-
+  key_keyboard = _getch();
+  if (key_keyboard == '1') { GetNumberRounds(); }
+    if (key_keyboard == '2') { GetNumberRoundsForComputer(); }
+		else
+		{
+      std::cout << "\n\n\n  Wrong option!";
+      Sleep(700);
+      DrawBoard();
+		}
 }
 
 void GetNumberRounds(void)
@@ -219,90 +218,90 @@ void GetNumberRounds(void)
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute( handle , 3 );
 	std::cout << "\n\t\t\t" << std::endl;
-					std::cout <<"              ******     *      *******   *******  *******"<< std::endl;
-					std::cout<<"              *     *   * *     *      *  *        *      *"<< std::endl;
-					std::cout<<"              ******   *   *    ********  ******   *******"<< std::endl;
-					std::cout<<"              *       *******   *         *        *     *"<< std::endl;
-					std::cout<<"              *      *       *  *         *******  *      *"<< std::endl;
-			SetConsoleTextAttribute( handle , 7 );
-			std::cout << "\t\t ========================================" << std::endl;
-				SetConsoleTextAttribute (handle, 3);
-				std::cout << "\t\t\t     Stone, Scrissors" << std::endl << std::endl << std:: endl << std::endl << std::endl;
+  std::cout <<"              ******     *      *******   *******  *******"<< std::endl;
+  std::cout<<"              *     *   * *     *      *  *        *      *"<< std::endl;
+  std::cout<<"              ******   *   *    ********  ******   *******"<< std::endl;
+  std::cout<<"              *       *******   *         *        *     *"<< std::endl;
+  std::cout<<"              *      *       *  *         *******  *      *"<< std::endl;
+  SetConsoleTextAttribute( handle , 7 );
+  std::cout << "\t\t ========================================" << std::endl;
+  SetConsoleTextAttribute (handle, 3);
+  std::cout << "\t\t\t     Stone, Scrissors" << std::endl << std::endl << std:: endl << std::endl << std::endl;
 
-		Sleep (SLEEP_TIME);
-		SetConsoleTextAttribute (handle, 7);
-		std::cout << "\t\t\t";
-		for (int i = 0; i < 31; ++i)
-			{
-				SetConsoleTextAttribute (handle, 5);
-				std::cout << "-";
-			}
-		SetConsoleTextAttribute (handle, 7);
-		std::cout << std::endl;
-		std::cout << "\t\t\tEnter number of rounds [max.5] ";
+  Sleep (SLEEP_TIME);
+  SetConsoleTextAttribute (handle, 7);
+  std::cout << "\t\t\t";
+  for (int i = 0; i < 31; ++i)
+  {
+    SetConsoleTextAttribute (handle, 5);
+    std::cout << "-";
+  }
+  SetConsoleTextAttribute (handle, 7);
+  std::cout << std::endl;
+  std::cout << "\t\t\tEnter number of rounds [max.5] ";
 	std::cin >> game_options._rounds;
-							while(game_options._rounds > 5 || game_options._rounds <= 0)
-									{
-										std::cout << "\n\t\t\t";
-										for (int i = 0; i < 36; ++i)
-												{
-													SetConsoleTextAttribute (handle, 2);
-													std::cout << "-";
-												}
-										std::cin.sync();
-										std::cin.clear();
-										SetConsoleTextAttribute (handle, 7);
-										std::cout << "\n\t\t\tEnter again number of rounds [max.5] ";
-										std::cin >> game_options._rounds;
-									}
-			Sleep (SLEEP_TIME);
-			system("CLS");
+  while(game_options._rounds > 5 || game_options._rounds <= 0)
+  {
+    std::cout << "\n\t\t\t";
+    for (int i = 0; i < 36; ++i)
+    {
+      SetConsoleTextAttribute (handle, 2);
+      std::cout << "-";
+    }
+    std::cin.sync();
+    std::cin.clear();
+    SetConsoleTextAttribute (handle, 7);
+    std::cout << "\n\t\t\tEnter again number of rounds [max.5] ";
+    std::cin >> game_options._rounds;
+  }
+  Sleep (SLEEP_TIME);
+  system("CLS");
 	SetConsoleTextAttribute( handle , 2 );
 	std::cout << "\n\t\t\t" << std::endl;
-					std::cout <<"              ******     *      *******   *******  *******"<< std::endl;
-					std::cout<<"              *     *   * *     *      *  *        *      *"<< std::endl;
-					std::cout<<"              ******   *   *    ********  ******   *******"<< std::endl;
-					std::cout<<"              *       *******   *         *        *     *"<< std::endl;
-					std::cout<<"              *      *       *  *         *******  *      *"<< std::endl;
-			SetConsoleTextAttribute( handle , 7 );
-			std::cout << "\t\t ========================================" << std::endl;
-				SetConsoleTextAttribute (handle, 2);
-				std::cout << "\t\t\t     Stone, Scrissors" << std::endl << std::endl << std:: endl << std::endl << std::endl;
-		SetConsoleTextAttribute (handle, 7);
-		std::cout << "\t\t\t";
-					for (int i = 0; i < 28; ++i)
-						{
-							SetConsoleTextAttribute (handle, 1);
-							std::cout << "-";
-						}
-		SetConsoleTextAttribute (handle, 7);
-			std::cout << "\n\t\t\tEnter name player 1: ";
+  std::cout <<"              ******     *      *******   *******  *******"<< std::endl;
+  std::cout<<"              *     *   * *     *      *  *        *      *"<< std::endl;
+  std::cout<<"              ******   *   *    ********  ******   *******"<< std::endl;
+  std::cout<<"              *       *******   *         *        *     *"<< std::endl;
+  std::cout<<"              *      *       *  *         *******  *      *"<< std::endl;
+  SetConsoleTextAttribute( handle , 7 );
+  std::cout << "\t\t ========================================" << std::endl;
+  SetConsoleTextAttribute (handle, 2);
+  std::cout << "\t\t\t     Stone, Scrissors" << std::endl << std::endl << std:: endl << std::endl << std::endl;
+  SetConsoleTextAttribute (handle, 7);
+  std::cout << "\t\t\t";
+  for (int i = 0; i < 28; ++i)
+  {
+    SetConsoleTextAttribute (handle, 1);
+    std::cout << "-";
+  }
+  SetConsoleTextAttribute (handle, 7);
+  std::cout << "\n\t\t\tEnter name player 1: ";
 	std::cin >> game_options.names[0];
 	std::cout << "\t\t\t";
-					for (int i = 0; i < 28; ++i)
-						{
-							SetConsoleTextAttribute (handle, 1);
-							std::cout << "-";
-						}
-		SetConsoleTextAttribute (handle, 7);
-		std::cout << "\n\t\t\tEnter name player 2: ";
-	std::cin>>game_options.names[1];
-						while (game_options.names[0] == game_options.names[1])
-								{
-										std::cin.sync();
-										std::cin.clear();
-									std::cout << std::endl;
-									std::cout << "\t\t\t";
-											for (int i = 0; i < 28; ++i)
-												{
-													SetConsoleTextAttribute (handle, 2);
-													std::cout << "-";
-												}
-			SetConsoleTextAttribute (handle, 7);
-			std::cout << "\n\t\t\tEnter another name: ";
-			std::cin>>game_options.names[1];
-		}
-						GameForPlayers();
+  for (int i = 0; i < 28; ++i)
+  {
+    SetConsoleTextAttribute (handle, 1);
+    std::cout << "-";
+  }
+  SetConsoleTextAttribute (handle, 7);
+  std::cout << "\n\t\t\tEnter name player 2: ";
+  std::cin>>game_options.names[1];
+  while (game_options.names[0] == game_options.names[1])
+  {
+  std::cin.sync();
+  std::cin.clear();
+  std::cout << std::endl;
+  std::cout << "\t\t\t";
+  for (int i = 0; i < 28; ++i)
+  {
+    SetConsoleTextAttribute (handle, 2);
+    std::cout << "-";
+  }
+  SetConsoleTextAttribute (handle, 7);
+  std::cout << "\n\t\t\tEnter another name: ";
+  std::cin>>game_options.names[1];
+  }
+  GameForPlayers();
 }
 
 
@@ -320,7 +319,6 @@ void GameForPlayers(void)
 		CheckGame();
 	}
 	DrawStatistics();
-
 }
 
 void DrawTypesWeaponsPlayer1(void)
@@ -340,51 +338,55 @@ void DrawTypesWeaponsPlayer1(void)
 	HANDLE handle;
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	std::cout << "\t\t\t";
-		for (int i = 0; i < TAB; ++i)
-			{
-			std::cout << "=";
-			}
-		std::cout << "\n\t\t\t";
-		std::cout << "=  Paper Stone Scrissors Game =" << std::endl;
-		std::cout << "\t\t\t";
-			for (int i = 0; i < TAB; ++i)
-				{
-					std::cout << "=";
-				}
+  for (int i = 0; i < TAB; ++i)
+  {
+    std::cout << "=";
+  }
+  std::cout << "\n\t\t\t";
+  std::cout << "=  Paper Stone Scrissors Game =" << std::endl;
+  std::cout << "\t\t\t";
+  for (int i = 0; i < TAB; ++i)
+  {
+    std::cout << "=";
+  }
 	std::cout << "\n\n" << std::endl;
 	Sleep(SLEEP_TIME);
 	std::cout << "\t\t\t" <<  game_options.names[0] <<  ", enter type of your weapon" << std::endl;
 	Sleep(SLEEP_TIME + 2000);
 
-				  std::cout << std::endl;
-				  std::cout	<< "\a\t |   ******    |" << std::endl;
-				  std::cout << "\t |   *     *   |     [1] Paper" << std::endl;
-				  std::cout << "\t |   ******    |"  << std::endl;
-				  std::cout << "\t |   *         |"  << std::endl;
-				  std::cout << "\t |   *         |"  << std::endl;
+  std::cout << std::endl;
+  std::cout	<< "\a\t |   ******    |" << std::endl;
+  std::cout << "\t |   *     *   |     [1] Paper" << std::endl;
+  std::cout << "\t |   ******    |"  << std::endl;
+  std::cout << "\t |   *         |"  << std::endl;
+  std::cout << "\t |   *         |"  << std::endl;
 
-						std::cout << std::endl;
-						Sleep (SLEEP_TIME + 1000);
-
-
-				  std::cout	<< "\a\t\t  |   ******   |" << std::endl;
-				  std::cout << "\t\t  |   *        |     [2] Stone" << std::endl;
-				  std::cout << "\t\t  |   ******   |"  << std::endl;
-				  std::cout << "\t\t  |        *   |"  << std::endl;
-				  std::cout << "\t\t  |   ******   |"  << std::endl;
-					std::cout << std::endl;
-					Sleep(SLEEP_TIME + 1000);
+  std::cout << std::endl;
+  Sleep (SLEEP_TIME + 1000);
 
 
-				  std::cout	<< "\a\t\t\t  |   ******        |" << std::endl;
-				  std::cout << "\t\t\t  |   *             |     [3] Scrissors" << std::endl;
-				  std::cout << "\t\t\t  |   ******  ....  |"  << std::endl;
-				  std::cout << "\t\t\t  |        *  .     |"  << std::endl;
-				  std::cout << "\t\t\t  |   ******  ....  |"  << std::endl;
+  std::cout	<< "\a\t\t  |   ******   |" << std::endl;
+  std::cout << "\t\t  |   *        |     [2] Stone" << std::endl;
+  std::cout << "\t\t  |   ******   |"  << std::endl;
+  std::cout << "\t\t  |        *   |"  << std::endl;
+  std::cout << "\t\t  |   ******   |"  << std::endl;
+  std::cout << std::endl;
+  Sleep(SLEEP_TIME + 1000);
 
 
-type_weapon = _getch();
-if(type_weapon != '1' && type_weapon != '2' && type_weapon != '3') {system("CLS"); DrawTypesWeaponsPlayer1();}
+  std::cout	<< "\a\t\t\t  |   ******        |" << std::endl;
+  std::cout << "\t\t\t  |   *             |     [3] Scrissors" << std::endl;
+  std::cout << "\t\t\t  |   ******  ....  |"  << std::endl;
+  std::cout << "\t\t\t  |        *  .     |"  << std::endl;
+  std::cout << "\t\t\t  |   ******  ....  |"  << std::endl;
+
+
+  type_weapon = _getch();
+  if(type_weapon != '1' && type_weapon != '2' && type_weapon != '3')
+  {
+    system("CLS");
+    DrawTypesWeaponsPlayer1();
+  }
 }
 
 
@@ -393,56 +395,56 @@ void DrawCountdown(void)
 {
 	system("CLS");
 	Sleep (SLEEP_TIME);
-		system("COLOR 17");
-		std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-		std::cout << "\a";
-		std::cout << "\t\t\t\t     ROUND " << counter_rounds << std::endl;
-		Sleep(SLEEP_TIME + 500);
+  system("COLOR 17");
+  std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+  std::cout << "\a";
+  std::cout << "\t\t\t\t     ROUND " << counter_rounds << std::endl;
+  Sleep(SLEEP_TIME + 500);
 	system("CLS");
 	Sleep(SLEEP_TIME);
 	system("COLOR 40");
 	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
 	std::cout << "\a";
 	std::cout << "\t\t\t\t   *******" << std::endl
-			  << "\t\t\t\t   *******" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t   *******" << std::endl
-			  << "\t\t\t\t   *******" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t   *******" << std::endl
-			  << "\t\t\t\t   *******" << std::endl;
+    << "\t\t\t\t   *******" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t   *******" << std::endl
+    << "\t\t\t\t   *******" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t   *******" << std::endl
+    << "\t\t\t\t   *******" << std::endl;
 	Sleep(SLEEP_TIME + 500);
 	system("CLS");
 	system("COLOR e0");
 	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
 	std::cout << "\a";
 	std::cout << "\t\t\t\t   *******" << std::endl
-			  << "\t\t\t\t *********" << std::endl
-			  << "\t\t\t\t  *   ***  " << std::endl
-			  << "\t\t\t\t     ***   " << std::endl
-			  << "\t\t\t\t    ***    " << std::endl
-			  << "\t\t\t\t   ***     " << std::endl
-			  << "\t\t\t\t  ***     " << std::endl
-			  << "\t\t\t\t ***      " << std::endl
-			  << "\t\t\t\t *******" << std::endl
-			  << "\t\t\t\t *******" << std::endl;
+    << "\t\t\t\t *********" << std::endl
+    << "\t\t\t\t  *   ***  " << std::endl
+    << "\t\t\t\t     ***   " << std::endl
+    << "\t\t\t\t    ***    " << std::endl
+    << "\t\t\t\t   ***     " << std::endl
+    << "\t\t\t\t  ***     " << std::endl
+    << "\t\t\t\t ***      " << std::endl
+    << "\t\t\t\t *******" << std::endl
+    << "\t\t\t\t *******" << std::endl;
 	Sleep(SLEEP_TIME + 500);
 	system("CLS");
 	system("COLOR a0");
 	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
 	std::cout << "\a";
 	std::cout << "\t\t\t\t       ***" << std::endl
-			  << "\t\t\t\t     *****" << std::endl
-			  << "\t\t\t\t    ******" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t        **" << std::endl
-			  << "\t\t\t\t        **" << std::endl;
+    << "\t\t\t\t     *****" << std::endl
+    << "\t\t\t\t    ******" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t        **" << std::endl
+    << "\t\t\t\t        **" << std::endl;
 	++counter_rounds;
 	Sleep(1000);
 }
@@ -460,51 +462,55 @@ void DrawTypesWeaponsPlayer2(void)
 	if(colP2 == 9) {system("COLOR 80");}
 	system ("CLS");
 	std::cout << "\t\t\t";
-		for (int i = 0; i < TAB; ++i)
-			{
-			std::cout << "=";
-			}
-		std::cout << "\n\t\t\t";
-		std::cout << "=  Paper Stone Scrissors Game =" << std::endl;
-		std::cout << "\t\t\t";
-			for (int i = 0; i < TAB; ++i)
-				{
-					std::cout << "=";
-				}
+  for (int i = 0; i < TAB; ++i)
+  {
+    std::cout << "=";
+  }
+  std::cout << "\n\t\t\t";
+  std::cout << "=  Paper Stone Scrissors Game =" << std::endl;
+  std::cout << "\t\t\t";
+  for (int i = 0; i < TAB; ++i)
+  {
+    std::cout << "=";
+  }
 	std::cout << "\n\n" << std::endl;
 	Sleep(SLEEP_TIME);
 	std::cout << "\t\t\t" << game_options.names[1] << ", enter type of your weapon" << std::endl;
 	Sleep(SLEEP_TIME + 2000);
 
-				  std::cout << std::endl;
-				  std::cout	<< "\a\t   |   ******    |" << std::endl;
-				  std::cout << "\t   |   *     *   |     [1] Paper" << std::endl;
-				  std::cout << "\t   |   ******    |"  << std::endl;
-				  std::cout << "\t   |   *         |"  << std::endl;
-				  std::cout << "\t   |   *         |"  << std::endl;
+  std::cout << std::endl;
+  std::cout	<< "\a\t   |   ******    |" << std::endl;
+  std::cout << "\t   |   *     *   |     [1] Paper" << std::endl;
+  std::cout << "\t   |   ******    |"  << std::endl;
+  std::cout << "\t   |   *         |"  << std::endl;
+  std::cout << "\t   |   *         |"  << std::endl;
 
-						std::cout << std::endl;
-						Sleep (SLEEP_TIME + 1000);
-
-
-				  std::cout	<< "\a\t\t   |   ******   |" << std::endl;
-				  std::cout << "\t\t   |   *        |     [2] Stone" << std::endl;
-				  std::cout << "\t\t   |   ******   |"  << std::endl;
-				  std::cout << "\t\t   |        *   |"  << std::endl;
-				  std::cout << "\t\t   |   ******   |"  << std::endl;
-					std::cout << std::endl;
-					Sleep(SLEEP_TIME + 1000);
+  std::cout << std::endl;
+  Sleep (SLEEP_TIME + 1000);
 
 
+  std::cout	<< "\a\t\t   |   ******   |" << std::endl;
+  std::cout << "\t\t   |   *        |     [2] Stone" << std::endl;
+  std::cout << "\t\t   |   ******   |"  << std::endl;
+  std::cout << "\t\t   |        *   |"  << std::endl;
+  std::cout << "\t\t   |   ******   |"  << std::endl;
+  std::cout << std::endl;
+  Sleep(SLEEP_TIME + 1000);
 
-				  std::cout	<< "\a\t\t\t  |   ******        |" << std::endl;
-				  std::cout << "\t\t\t  |   *             |     [3] Scrissors" << std::endl;
-				  std::cout << "\t\t\t  |   ******  ....  |"  << std::endl;
-				  std::cout << "\t\t\t  |        *  .     |"  << std::endl;
-				  std::cout << "\t\t\t  |   ******  ....  |"  << std::endl;
 
-type_weapon1 = _getch();
-if(type_weapon1 != '1' && type_weapon1 != '2' && type_weapon1 != '3') {system("CLS"); DrawTypesWeaponsPlayer2();}
+
+  std::cout	<< "\a\t\t\t  |   ******        |" << std::endl;
+  std::cout << "\t\t\t  |   *             |     [3] Scrissors" << std::endl;
+  std::cout << "\t\t\t  |   ******  ....  |"  << std::endl;
+  std::cout << "\t\t\t  |        *  .     |"  << std::endl;
+  std::cout << "\t\t\t  |   ******  ....  |"  << std::endl;
+
+  type_weapon1 = _getch();
+  if(type_weapon1 != '1' && type_weapon1 != '2' && type_weapon1 != '3')
+  {
+    system("CLS");
+    DrawTypesWeaponsPlayer2();
+  }
 
 }
 
@@ -514,99 +520,106 @@ int CheckGame()
 	system("CLS");
 	system("COLOR f1");
 
-			if(type_weapon == '1')
-			{
-
-	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+  if(type_weapon == '1')
+  {
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+      << std::endl << std::endl << std::endl;
 	Sleep(SLEEP_TIME + 1000);
-				  std::cout	<< "\a\t\t\t       |   ******    |" << std::endl;
-				  std::cout << "\t\t\t       |   *     *   |" << std::endl;
-				  std::cout << "\t\t\t       |   ******    |"  << std::endl;
-				  std::cout << "\t\t\t       |   *         |"  << std::endl;
-				  std::cout << "\t\t\t       |   *         |"  << std::endl << std::endl << std::endl;
-				  std::cout << "\t\t\t            PAPER" << std::endl;
+  std::cout	<< "\a\t\t\t       |   ******    |" << std::endl;
+  std::cout << "\t\t\t       |   *     *   |" << std::endl;
+  std::cout << "\t\t\t       |   ******    |"  << std::endl;
+  std::cout << "\t\t\t       |   *         |"  << std::endl;
+  std::cout << "\t\t\t       |   *         |"  << std::endl << std::endl << std::endl;
+  std::cout << "\t\t\t            PAPER" << std::endl;
 
-						std::cout << std::endl;
-			}
-				if(type_weapon == '2')
-				{
-					std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-				  std::cout << "\a\t\t\t          |   ******   |" << std::endl;
-				  std::cout << "\t\t\t          |   *        |" << std::endl;
-				  std::cout << "\t\t\t          |   ******   |"  << std::endl;
-				  std::cout << "\t\t\t          |        *   |"  << std::endl;
-				  std::cout << "\t\t\t          |   ******   |"  << std::endl << std::endl;
-					std::cout << std::endl;
-					std::cout << "\t\t\t               STONE" << std::endl;
-					Sleep(SLEEP_TIME + 1000);
-				}
-					if(type_weapon == '3')
-					{
-						std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-						std::cout << "\a\t\t\t      |   ******        |" << std::endl;
-						std::cout << "\t\t\t      |   *             |" << std::endl;
-						std::cout << "\t\t\t      |   ******  ....  |"  << std::endl;
-						std::cout << "\t\t\t      |        *  .     |"  << std::endl;
-						std::cout << "\t\t\t      |   ******  ....  |"  << std::endl << std::endl << std::endl;
-						std::cout << "\t\t\t           SCRISSORS" << std::endl;
-						Sleep(SLEEP_TIME + 1000);
-					}
-					Sleep(SLEEP_TIME);
-					system("CLS");
-					system("COLOR 3f");
-					std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-						std::cout << "\a\t\t\t ********  ********       " << std::endl;
-						std::cout << "\t\t\t  *******  *******     " << std::endl;
-						std::cout << "\t\t\t   ******  ******   ******   " << std::endl;
-						std::cout << "\t\t\t    *****  *****    *  " << std::endl;
-						std::cout << "\t\t\t     ****  ****     ******  " << std::endl;
-						std::cout << "\t\t\t      ***  ***           *" << std::endl;
-						std::cout << "\t\t\t      ********  ##  ******" << std::endl;
-					Sleep(1000);
+  std::cout << std::endl;
+  }
+  if(type_weapon == '2')
+  {
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+      << std::endl << std::endl << std::endl;
+    std::cout << "\a\t\t\t          |   ******   |" << std::endl;
+    std::cout << "\t\t\t          |   *        |" << std::endl;
+    std::cout << "\t\t\t          |   ******   |"  << std::endl;
+    std::cout << "\t\t\t          |        *   |"  << std::endl;
+    std::cout << "\t\t\t          |   ******   |"  << std::endl << std::endl;
+    std::cout << std::endl;
+    std::cout << "\t\t\t               STONE" << std::endl;
+    Sleep(SLEEP_TIME + 1000);
+  }
+  if(type_weapon == '3')
+  {
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+      << std::endl << std::endl << std::endl;
+    std::cout << "\a\t\t\t      |   ******        |" << std::endl;
+    std::cout << "\t\t\t      |   *             |" << std::endl;
+    std::cout << "\t\t\t      |   ******  ....  |"  << std::endl;
+    std::cout << "\t\t\t      |        *  .     |"  << std::endl;
+    std::cout << "\t\t\t      |   ******  ....  |"  << std::endl << std::endl << std::endl;
+    std::cout << "\t\t\t           SCRISSORS" << std::endl;
+    Sleep(SLEEP_TIME + 1000);
+  }
+  Sleep(SLEEP_TIME);
+  system("CLS");
+  system("COLOR 3f");
+  std::cout << std::endl << std::endl << std::endl << std::endl << std::endl <<
+    std::endl << std::endl << std::endl;
+  std::cout << "\a\t\t\t ********  ********       " << std::endl;
+  std::cout << "\t\t\t  *******  *******     " << std::endl;
+  std::cout << "\t\t\t   ******  ******   ******   " << std::endl;
+  std::cout << "\t\t\t    *****  *****    *  " << std::endl;
+  std::cout << "\t\t\t     ****  ****     ******  " << std::endl;
+  std::cout << "\t\t\t      ***  ***           *" << std::endl;
+  std::cout << "\t\t\t      ********  ##  ******" << std::endl;
+  Sleep(1000);
 
 	system("CLS");
 	system("COLOR f1");
-			if(type_weapon1 == '1')
-			{
-	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-				  std::cout	<< "\a\t\t\t       |   ******    |" << std::endl;
-				  std::cout << "\t\t\t       |   *     *   |" << std::endl;
-				  std::cout << "\t\t\t       |   ******    |"  << std::endl;
-				  std::cout << "\t\t\t       |   *         |"  << std::endl;
-				  std::cout << "\t\t\t       |   *         |"  << std::endl << std::endl << std::endl;
-				  std::cout << "\t\t\t            PAPER" << std::endl;
-				  Sleep(SLEEP_TIME + 1000);
+  if(type_weapon1 == '1')
+  {
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+      << std::endl << std::endl << std::endl;
+    std::cout	<< "\a\t\t\t       |   ******    |" << std::endl;
+    std::cout << "\t\t\t       |   *     *   |" << std::endl;
+    std::cout << "\t\t\t       |   ******    |"  << std::endl;
+    std::cout << "\t\t\t       |   *         |"  << std::endl;
+    std::cout << "\t\t\t       |   *         |"  << std::endl << std::endl << std::endl;
+    std::cout << "\t\t\t            PAPER" << std::endl;
+    Sleep(SLEEP_TIME + 1000);
 
-						std::cout << std::endl;
-			}
-				if(type_weapon1 == '2')
-				{
-					std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-				  std::cout << "\a\t\t\t          |   ******   |" << std::endl;
-				  std::cout << "\t\t\t          |   *        |" << std::endl;
-				  std::cout << "\t\t\t          |   ******   |"  << std::endl;
-				  std::cout << "\t\t\t          |        *   |"  << std::endl;
-				  std::cout << "\t\t\t          |   ******   |"  << std::endl << std::endl;
-					std::cout << std::endl;
-					std::cout << "\t\t\t               STONE" << std::endl;
-					Sleep(SLEEP_TIME + 1000);
-				}
-					if(type_weapon1 == '3')
-					{
-						std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-						std::cout << "\a\t\t\t      |   ******        |" << std::endl;
-						std::cout << "\t\t\t      |   *             |" << std::endl;
-						std::cout << "\t\t\t      |   ******  ....  |"  << std::endl;
-						std::cout << "\t\t\t      |        *  .     |"  << std::endl;
-						std::cout << "\t\t\t      |   ******  ....  |"  << std::endl << std::endl << std::endl;
-						std::cout << "\t\t\t           SCRISSORS" << std::endl;
-						Sleep(SLEEP_TIME + 1000);
-					}
+    std::cout << std::endl;
+  }
+  if(type_weapon1 == '2')
+  {
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+      << std::endl << std::endl << std::endl;
+    std::cout << "\a\t\t\t          |   ******   |" << std::endl;
+    std::cout << "\t\t\t          |   *        |" << std::endl;
+    std::cout << "\t\t\t          |   ******   |"  << std::endl;
+    std::cout << "\t\t\t          |        *   |"  << std::endl;
+    std::cout << "\t\t\t          |   ******   |"  << std::endl << std::endl;
+    std::cout << std::endl;
+    std::cout << "\t\t\t               STONE" << std::endl;
+    Sleep(SLEEP_TIME + 1000);
+  }
+  if(type_weapon1 == '3')
+  {
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+      << std::endl << std::endl << std::endl;
+    std::cout << "\a\t\t\t      |   ******        |" << std::endl;
+    std::cout << "\t\t\t      |   *             |" << std::endl;
+    std::cout << "\t\t\t      |   ******  ....  |"  << std::endl;
+    std::cout << "\t\t\t      |        *  .     |"  << std::endl;
+    std::cout << "\t\t\t      |   ******  ....  |"  << std::endl << std::endl << std::endl;
+    std::cout << "\t\t\t           SCRISSORS" << std::endl;
+    Sleep(SLEEP_TIME + 1000);
+  }
 		system("CLS");
 		if(type_weapon == '1' && type_weapon1 == '1' || type_weapon == '2' && type_weapon1 == '2' || type_weapon == '3' && type_weapon1 == '3')
 		{
 			system("COLOR 5f");
-			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+        << std::endl << std::endl << std::endl << std::endl << std::endl;
 			std::cout << "\a";
 			std::cout << "\t\t\t\t     DRAW! " << std::endl;
 			Sleep(SLEEP_TIME + 1000);
@@ -616,13 +629,15 @@ int CheckGame()
 		if(type_weapon == '1' && type_weapon1 == '2')
 		{
 			system("COLOR 9c");
-			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+        << std::endl << std::endl << std::endl << std::endl << std::endl;
 			std::cout << "\a";
 			std::cout << "\t\t\t\tPAPER wraps STONE! " << std::endl;
 			Sleep(SLEEP_TIME + 1000);
 			++game_options.score_player[0];
 			system("CLS");
-			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+        << std::endl << std::endl << std::endl << std::endl << std::endl;
 			std::cout << "\a";
 			std::cout << "\t\t\t\t" << game_options.names[0] << " win round!" << std::endl;
 			Sleep(SLEEP_TIME + 1000);
@@ -630,13 +645,15 @@ int CheckGame()
 		if(type_weapon == '2' && type_weapon1 == '1')
 		{
 			system("COLOR 3a");
-			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+        << std::endl << std::endl << std::endl << std::endl << std::endl;
 			std::cout << "\a";
 			std::cout << "\t\t\t\tPAPER wraps STONE! " << std::endl;
 			Sleep(SLEEP_TIME + 1000);
 			++game_options.score_player[1];
 			system("CLS");
-			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+        << std::endl << std::endl << std::endl << std::endl << std::endl;
 			std::cout << "\a";
 			std::cout << "\t\t\t\t" << game_options.names[1] << " win round!" << std::endl;
 			Sleep(SLEEP_TIME + 1000);
@@ -644,13 +661,15 @@ int CheckGame()
 		if(type_weapon == '1' && type_weapon1 == '3')
 		{
 			system("COLOR 1e");
-			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+        << std::endl << std::endl << std::endl << std::endl << std::endl;
 			std::cout << "\a";
 			std::cout << "\t\t\t\tSCRISSORS cut PAPER! " << std::endl;
 			Sleep(SLEEP_TIME + 1000);
 			++game_options.score_player[1];
 			system("CLS");
-			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl
+        << std::endl << std::endl << std::endl << std::endl << std::endl;
 			std::cout << "\a";
 			std::cout << "\t\t\t\t" << game_options.names[1] << " win round!" << std::endl;
 			Sleep(SLEEP_TIME + 1000);
